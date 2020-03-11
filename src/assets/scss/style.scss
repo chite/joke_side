@@ -1,0 +1,163 @@
+$colors: (
+  complementary: #afe3c0,
+  main: #ffffff,
+  emphasize: #d89a9e
+);
+$font: 'microsoft jhenghei';
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+@mixin pc-width() {
+  @media only screen and (min-width: 576px) {
+    @content;
+  }
+}
+@mixin md-width() {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @mixin lg-width() {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+
+
+.nav {
+  width: 100%;
+  height: 5rem;
+  font-family: $font;
+  display: flex;
+  align-items: center;
+  &__group {
+    padding: 0;
+  }
+  &__element {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: gray;
+    text-decoration: none;
+    &:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.letter {
+  margin: 0;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list {
+  padding: 0;
+  list-style-type: none;
+  &__main{
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  &__single {
+    width: 100%;
+    flex: 0 0 100%;
+    @include pc-width {
+      width: 70%;
+      flex: 0 0 70%;
+    }
+  }
+  &__double {
+    width: 100%;
+    flex: 0 0 100%;
+    @include pc-width {
+      width: 30%;
+      flex: 0 0 30%;
+    }
+  }
+  &__item {
+    text-decoration: none;
+    font-family: $font;
+    box-sizing: border-box;
+    margin: 2rem 1rem;
+    padding: 0.5rem;
+    position: relative;
+    &:hover{
+        background: #EAEAEA;
+        cursor: pointer;
+    }
+  }
+  &__item--single {
+    letter-spacing: 0.17rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    border: 2px solid map-get($colors, complementary);
+    border-radius: 10px;
+  }
+  &__item--double {
+    display: flex;
+    justify-content: space-around;
+    letter-spacing: 0.17rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    border: 2px solid map-get($colors, emphasize);
+    border-radius: 10px;
+  }
+  &__rank {
+    align-items: center;
+    background: map-get($colors, emphasize);
+    border-radius: 50%;
+    color: map-get($colors, main);
+    display: flex;
+    flex: 0 0 0.75rem;
+    font-size: 0.5rem;
+    position: absolute;
+    top: 0.1rem;
+    left: 0.1rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    justify-content: center;
+    letter-spacing: 0;
+  }
+}
+
+.m-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__input {
+    border: 2px solid #6A8EAE;
+    border-radius: 10px;
+    outline: none;
+    padding: .25rem;
+    @include pc-width(){
+        width: 500px;
+    }
+    @include md-width(){
+        width: 700px;
+    }
+    @include lg-width(){
+        width: 900px;
+    }
+  }
+  &__btn{
+      background: #6A8EAE;
+      border: none;
+      border-radius: 10px;
+      color: map-get($colors, main);
+      font-family: $font;
+      font-size: 1rem;
+      padding: .5rem 0;
+      margin-top: 2rem;
+      outline: none;
+      width: 30%;
+      &:hover{
+        cursor: pointer;
+        filter: brightness(.8);
+      }
+  }
+}
