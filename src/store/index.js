@@ -79,12 +79,16 @@ export default new Vuex.Store({
         score: 600
       }
     ],
-    keyword: '時'
+    keyword: '時',
+    // specificIndex: -1
   },
   mutations: {
     setKeyWord(state, payload){
       state.keyword = payload.text;
-    }
+    },
+    // setSpecificIndex(state, payload){
+    //   state.specificIndex = payload.index;
+    // }
   },
   actions: {
   }
