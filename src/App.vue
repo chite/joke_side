@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-    <nav class="nav">
-      <ul class="nav__group">
-        <router-link
-          class="nav__element"
-          to
-        >首頁</router-link>
-        <router-link
-          class="nav__element"
-          to
-        >分類</router-link>
-        <router-link
-          class="nav__element"
-          to
-        >上傳</router-link>
-      </ul>
+    <nav class="bar">
+       <font-awesome-icon icon="bars" />
+       <div>
+         <font-awesome-icon icon="search" />
+         <p>&#x25BE;</p>
+       </div>
+       <font-awesome-icon icon="question-circle" />
+       <font-awesome-icon icon="th" />
     </nav>
     <router-view />
   </div>

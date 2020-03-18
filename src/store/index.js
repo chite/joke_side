@@ -5,91 +5,181 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    jokes:[
+    draft: [
       {
-        id:0, 
-        text: '跟一女同事玩打手背的遊戲，不小心抓到了她的手，破了一點表皮，然後女同事一臉認真的拿出手機，正在我以為她要拍照發朋友圈控訴我的時候…只見她在網上搜索：被單身狗抓了需要打狂犬疫苗嗎？',
-        catergy: 0
-      },
-      {
-        id:1, 
-        text: '最近來親戚了，不舒服就和男朋友鬧彆扭，持續了一周了，最近兩天死皮賴臉的纏著我！我懶得搭理他，就指了指壞掉的空調說道：男人都是大豬蹄子，就和破空調一樣，我熱了偏要吹熱風，我冷了偏要吹涼風！男朋友也怒了，說到：你連空調都不如，最起碼它知道吹。',
-        catergy: 0
-      },
-      {
-        id:2, 
-        text: '早上我去菜市場買青菜，我問小販：“你這菜打過農藥嗎？”小販想了想說：“估計打不過。”',
-        catergy: 0
-      },
-      {
-        id:3, 
-        text: '我一同學，前段時間賣掉了上海的一間房子，家人怎麼攔都沒有用，問他原因，他說:就這一間房，將來住都住不下，也買不起了，不如在家鄉買個十來間，寧做雞頭不做牛尾嘛！直到前兩天聽說他開了個桑拿中心，總算明白他的苦心！',
-        catergy: 0
-      },
-      {
-        id:4, 
-        text: '有一天我問我媽，“媽，我是你的什麼？ ”我媽撇了我一眼 “媽的智障”！',
-        catergy: 0
-      },
-      {
-        id:5, 
-        text: "在經歷了漫長的十幾小時飛機後，我終於如願以償的到達了，美國洛杉磯，啊！美國，他們說的空氣，我一聞，果然是極其香甜的，完全沒有霧霾，於是我摘下了在中國所戴的厚厚的口罩，換上了厚厚的防彈衣！",
-        catergy: 0
-      },
-      {
-        id:6, 
-        text: '和一個漂亮的MM約了個會，看完電影后，她邀請我去她家，我覺得不能這麼空著手去，說先去超市買點東西，但這時她羞澀的對我說，“不用了，家裡還有剩的。”',
-        catergy: 0
+        object: '羅璟宸',
+        main: '無主旨',
+        content: '璟宸，很抱歉我突然離開，但希望你別來找我，我不知道該怎麼辦，我真的好累，好累.',
+        data:''
       }
     ],
-    rank:[
+    company:[
       {
-        id: 0,
-        name: 'Asdfs11',
-        score: 23312
+        object: '旺茂股份有限公司',
+        main: '合作研發討論會議',
+        content: '',
+        data:''
       },
       {
-        id: 1,
-        name: 'SSD112',
-        score: 19870
-      },
-      {
-        id: 2,
-        name: 'ddfre33',
-        score: 13009
-      },
-      {
-        id: 3,
-        name: 'Becky210',
-        score: 10020
-      },
-      {
-        id: 4,
-        name: 'AUnuty2s',
-        score: 4901
-      },
-      {
-        id: 5,
-        name: 'KKJU',
-        score: 1344
-      },
-      {
-        id: 6,
-        name: 'ssna0',
-        score: 600
+        object: '林芸玄',
+        main: '同學會邀請',
+        content: '',
+        data:''
       }
     ],
-    keyword: '時',
-    // specificIndex: -1
-  },
-  mutations: {
-    setKeyWord(state, payload){
-      state.keyword = payload.text;
-    },
-    // setSpecificIndex(state, payload){
-    //   state.specificIndex = payload.index;
-    // }
-  },
-  actions: {
+    receive:[
+      {
+        object: '昌聖股份有限公司',
+        main: '股東大會邀請函',
+        content: '公司將於2019/12/30，下午兩點於公司第一會議廳召開股東大會，商議公司經營方向與未來策略事宜，煩請轉發至各單位以及所有公司股東，謝謝。',
+        data:''
+      },
+      {
+        object: '昌聖股份有限公司',
+        main: '昌盛耶誕舞會邀請函',
+        content: '公司將於2019/12/25晚上1930於公司大廳舉辦耶誕舞會，屆時也將有百萬好禮抽獎活動，誠摯邀請所有公司同仁一起共襄盛舉這場盛會！',
+        data:''
+      },
+      {
+        object: '昌聖股份有限公司',
+        main: '秘書部聯合大會',
+        content: '秘書部將在2018/11/28早上0900召開秘書部聯合大會，請各單位秘書屆時務必參與會議商討秘書部工作分派，謝謝！',
+        data:''
+      },
+      {
+        object: '昌聖股份有限公司',
+        main: '公司總部2019年度第10次例會紀錄',
+        content: '會議紀錄如附檔，煩請秘書轉發至各單位部長，謝謝。',
+        data:''
+      },
+      {
+        object: '昌聖股份有限公司',
+        main: '公司研發部預算申請',
+        content: '您好，煩請秘書協助告知老闆我們研發部已經將預算表填寫完畢，預算表如附檔所示，謝謝！',
+        data:''
+      }
+    ],
+    trash:[
+      {
+        object: 'Behance',
+        main: '您的新靈感來源！2020年3月8日',
+        content: '',
+        data:''
+      },{
+        object: 'Dribbble',
+        main: 'Beyond, Slickdeals.com, and others are hiring',
+        content: '',
+        data:''
+      },{
+        object: 'The Economist today ',
+        main: 'America’s public pensions are trillions of dollars short',
+        content: '',
+        data:''
+      },{
+        object: '公企中心',
+        main: '【公企中心】別再死背英文單字了，更好的方法在這裡！',
+        content: '',
+        data:''
+      },{
+        object: 'LinkedIn 聯絡人',
+        main: '看看還有誰在 LinkedIn！',
+        content: '',
+        data:''
+      },{
+        object: 'The Economist ',
+        main: 'Try The Economist Espresso app and receive your first month free',
+        content: '',
+        data:''
+      },{
+        object: '系統管理者',
+        main: '電算中心 MailGates Notification',
+        content: '',
+        data:''
+      },{
+        object: 'Hostinger',
+        main: 'Black Friday Sale',
+        content: '',
+        data:''
+      },{
+        object: '研發處',
+        main: '109學年度學術研究特優獎獲獎人系列演講',
+        content: '',
+        data:''
+      },{
+        object: '方格子 | vocus',
+        main: '看似無用無效的其實最需要 文藝/創作出版專題推荐｜方格子',
+        content: '',
+        data:''
+      },{
+        object: 'Dribbble',
+        main: 'Courtside: "5 design principles for building your first portfolio " and more…',
+        content: '',
+        data:''
+      },{
+        object: '外語學院',
+        main: '外文中心第47期夜間推廣班：現正招生中',
+        content: '',
+        data:''
+      },{
+        object: 'Taco from Trello',
+        main: 'Trello + Post-it® = ❤️',
+        content: '',
+        data:''
+      },{
+        object: 'Pinterest',
+        main: '你可能會喜歡這些圖版',
+        content: '',
+        data:''
+      },{
+        object: 'The Readdle Team',
+        main: '🤓 Spark Tip #1: Smart Inbox',
+        content: '',
+        data:''
+      }
+    ],
+    backup:[
+      {
+        object: '朱映文',
+        main: '公司資料備份',
+        content: '',
+        data:''
+      },
+      {
+        object: '朱映文',
+        main: '公司資料備份',
+        content: '現在警察已經找到你，你應該很清楚知道你應該要做什麼、說什麼！是誰以誰的名義跟你交易就說是誰即可！說了不該說的，你會知道你家人的下場是什麼',
+        data:''
+      },
+      {
+        object: '研發科Robert',
+        main: '藥品查核資料',
+        content: 'Robert你好，我這邊需要一份上一期藥品研發的\n檢驗報告書三份，可以的話麻煩在明天下午三點前寄給我，謝謝。',
+        data:''
+      },
+      {
+        object: '研發科Jasmine',
+        main: '檢驗報告書問題',
+        content: 'Jasmine你好，在準備上期產品檢驗彙報時，\n我注意到有一項成分標示為紅字，是否可以跟你約個時間詢問詳細的細節呢？',
+        data:''
+      },
+      {
+        object: '部長',
+        main: '會議記錄',
+        content: '附檔為本次會議記錄內容，麻煩部長參閱，謝謝。',
+        data:''
+      },
+      {
+        object: '會計部Debbie',
+        main: '年度報表',
+        content: '你好，董事長辦公室需要今年度的報表資料一份，麻煩在下週三提供，謝謝。',
+        data:''
+      },
+      {
+        object: '人事室 Wayne',
+        main: '年度績效評定標準',
+        content: '您好，今年度下旬將進行各單位主管對下屬的績效評估，麻煩人事部在下週五\n之前將訂立的年度績效評定標準發函至秘書室以及各單位，以利後續評估作業，謝謝。',
+        data:''
+      }
+    ]
   }
 })
