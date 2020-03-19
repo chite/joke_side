@@ -1,225 +1,297 @@
-$colors: (
-  complementary: #afe3c0,
-  main: #ffffff,
-  emphasize: #d89a9e,
-  gray: #5f6368,
-  lifgtgray: #d3d3d3
-);
+$colors: ( complementary: #afe3c0, main: #ffffff, emphasize: #d89a9e, gray: #5f6368, lifgtgray: #d3d3d3);
 $font: 'microsoft jhenghei';
-
 html,
 body {
-  margin: 0;
+    margin: 0;
+    font-size: 24px;
 }
 
 .bar {
-  border-bottom: 0.5px solid map-get($map: $colors, $key: lifgtgray);
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  color: map-get($map: $colors, $key: gray);
-  &__left {
-    display: flex;
     align-items: center;
-    width: 25%;
-    flex-basis: 25%;
-    margin-left: 0.5rem;
-  }
-  &__icontainer {
-    width: 5rem;
-    height: 2rem;
-    margin-left: 1rem;
-  }
-  &__right {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 25%;
-    flex-basis: 25%;
-  }
-  &__self {
-    background: #c2185b;
+    border-bottom: 0.5px solid map-get($map: $colors, $key: lifgtgray);
     box-sizing: border-box;
-    border-radius: 50%;
-    color: #ffffff;
-    font-size: 0.9rem;
-    height: 2rem;
+    padding: 0.5rem;
+    height: 3.5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 2rem;
-  }
+    color: map-get($map: $colors, $key: gray);
+    &__left {
+        display: flex;
+        align-items: center;
+        width: 25%;
+        flex-basis: 25%;
+        margin-left: 0.5rem;
+    }
+    &__icontainer {
+        width: 5rem;
+        height: 2rem;
+        margin-left: 1rem;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 25%;
+        flex-basis: 25%;
+    }
+    &__self {
+        background: #c2185b;
+        box-sizing: border-box;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 0.9rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 2rem;
+    }
 }
 
 .icon {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
 }
 
 .search {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 2.5rem;
-  background: #f1f3f4;
-  width: 50%;
-  flex-basis: 50%;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  border-radius: 0.5rem;
-  &__group {
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-  }
-  &__title {
-    margin-left: 0.5rem;
-  }
-}
-.body {
-  height: calc(100vh - 60px);
-  display: flex;
-}
-.l-body {
-  flex: 0 0 25%;
-  max-width: 25%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  &__btn {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff;
-    border: none;
-    box-shadow: 0 1px 3px #999;
-    box-sizing: border-box;
-    border-radius: 1.5rem;
-    margin-top: 1rem;
-    overflow: hidden;
-    padding: 0.5rem 1rem;
-    max-width: 6rem;
     height: 2.5rem;
-    margin-left: 0.5rem;
-  }
-  &__box {
-    height: 8rem;
-    width: 100%;
-    margin-top: .5rem;
-    overflow-y: hidden;
+    background: #f1f3f4;
+    width: 50%;
+    flex-basis: 50%;
+    padding: 0.5rem;
     box-sizing: border-box;
-    box-shadow: -1px 1px 2px map-get($map: $colors, $key: lifgtgray);
-  &:hover{
-    overflow-y: scroll;
-  }
-  }
-  &__user {
-    height: 2rem;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    margin-left: .5rem;
-    padding: .25rem 0;
-    border-bottom: 1px solid map-get($map: $colors, $key: lifgtgray);
-  }
-  &__left {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
-  }
-  &__list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  &__item {
-    padding: .5rem 0 .5rem 1rem;
-    display: flex;
-    width: 80%;
-    border-radius: 0 10px 10px 0;
-    &:hover{
-      font-weight: 600;
-      cursor: pointer;
+    border-radius: 0.5rem;
+    &__group {
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
     }
-    &:not(:first-child):hover{
-      background-color: #e8eaed;
+    &__title {
+        margin-left: 0.5rem;
     }
-    &:first-child:hover{
-      background-color: #fce8e6;
-      color: #dd473d;
-    }
-  }
-  &__icontainer {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-    &--s {
-      width: 1rem;
-      height: 1rem;
-    }
-  }
-  &__catergory {
-    font-size: .7rem;
-    padding-left: 1rem;
-  }
-  &__call {
-    text-align: center;
-    svg{
-      font-size: 3rem;
-      margin: 1.5rem 0;
-      color: map-get($map: $colors, $key: lifgtgray);
-    }
-  }
-  &__font--s {
-    font-size: 0.75rem;
-    flex: none;
-    margin: 0 0.25rem;
-  }
-  &__font--link {
-    font-size: 0.75rem;
-    flex: none;
-    margin: 0 0.25rem;
-    color: #4c80d9;
-  }
 }
+
+.body {
+    height: calc(100vh - 3.5rem);
+    display: flex;
+}
+
+.l-body {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        border: none;
+        box-shadow: 0 1px 3px #999;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        padding: 0.5rem 1rem;
+        max-width: 6rem;
+        height: 2.5rem;
+        margin-left: 0.5rem;
+    }
+    &__box {
+        height: 8rem;
+        width: 100%;
+        margin-top: .5rem;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        box-shadow: -1px 1px 2px map-get($map: $colors, $key: lifgtgray);
+        &:hover {
+            overflow-y: scroll;
+        }
+    }
+    &__user {
+        height: 2rem;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        margin-left: .5rem;
+        padding: .25rem 0;
+        border-bottom: 1px solid map-get($map: $colors, $key: lifgtgray);
+    }
+    &__left {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        padding: .5rem 0 .5rem 1rem;
+        display: flex;
+        width: 80%;
+        border-radius: 0 10px 10px 0;
+        &:hover {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        &:not(:first-child):hover {
+            background-color: #e8eaed;
+        }
+        &:first-child:hover {
+            background-color: #fce8e6;
+            color: #dd473d;
+        }
+    }
+    &__icontainer {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        &--s {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    &__catergory {
+        font-size: .7rem;
+        padding-left: 1rem;
+    }
+    &__call {
+        text-align: center;
+        svg {
+            font-size: 3rem;
+            margin: 1.5rem 0;
+            color: map-get($map: $colors, $key: lifgtgray);
+        }
+    }
+    &__font--s {
+        font-size: 0.75rem;
+        flex: none;
+        margin: 0 0.25rem;
+    }
+    &__font--link {
+        font-size: 0.75rem;
+        flex: none;
+        margin: 0 0.25rem;
+        color: #4c80d9;
+    }
+}
+
 .m-body {
-  flex: 0 0 70%;
-  max-width: 70%;
-  display: flex;
-  height: 100%;
+    flex: 0 0 70%;
+    max-width: 70%;
+    display: flex;
+    height: 100%;
+    padding-top: .5rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    &__bar,
+    &__l {
+        display: flex;
+        color: map-get($map: $colors, $key: gray);
+    }
+    &__bar {
+        opacity: .5;
+        justify-content: space-between;
+        width: 100%;
+        padding: .25rem 0;
+    }
+    &__l,
+    &__r {
+        svg,
+        span {
+            margin: 0 .75rem;
+        }
+    }
+    &__checkbox {
+        width: .65rem;
+        height: .65rem;
+        border: 3px solid map-get($map: $colors, $key: gray);
+        border-radius: 5px;
+        flex-shrink: 0;
+        &--light {
+            opacity: .3;
+        }
+    }
+    &__list {
+        font-size: .75rem;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+    }
+    &__item {
+        display: flex;
+        padding: .75rem 0;
+        overflow: hidden;
+        border-bottom: 1px solid map-get($map: $colors, $key: lifgtgray);
+        svg {
+            opacity: .3;
+            margin: 0 1rem;
+        }
+        &:first-child {
+            border-top: 1px solid map-get($map: $colors, $key: lifgtgray);
+        }
+        &:hover{
+          box-shadow: 0 1px 3px map-get($map: $colors, $key: lifgtgray);
+          cursor: pointer;
+          svg, .m-body__checkbox{
+            opacity: .8;
+        }
+        }
+    }
+    &__name {
+        min-width: 8rem;
+    }
+    &__name,
+    &__title {
+        flex-shrink: 0;
+        font-weight: 600;
+        padding-right: .5rem;
+    }
+    &__content {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        opacity: .8;
+    }
 }
 
 .r-body {
-  color: map-get($map: $colors, $key: gray);
-  font-size: 0.75rem;
-  flex: 0 0 5%;
-  max-width: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  box-sizing: border-box;
-  border-left: 0.5px solid map-get($map: $colors, $key: lifgtgray);
-  &__icontainer {
-    width: 1rem;
-    height: 1rem;
-    margin: 1rem 0;
-  }
-  &__line {
-    border-bottom: 1px solid map-get($map: $colors, $key: lifgtgray);
-    width: 60%;
-    margin: 1rem 0;
-  }
-  svg {
-    margin: 1rem 0;
-  }
+    color: map-get($map: $colors, $key: gray);
+    font-size: 0.75rem;
+    flex: 0 0 5%;
+    max-width: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 0.5px solid map-get($map: $colors, $key: lifgtgray);
+    &__icontainer {
+        width: 1rem;
+        height: 1rem;
+        margin: 1rem 0;
+    }
+    &__line {
+        border-bottom: 1px solid map-get($map: $colors, $key: lifgtgray);
+        width: 60%;
+        margin: 1rem 0;
+    }
+    svg {
+        margin: 1rem 0;
+    }
 }
