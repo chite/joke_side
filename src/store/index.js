@@ -180,6 +180,12 @@ export default new Vuex.Store({
         content: '您好，今年度下旬將進行各單位主管對下屬的績效評估，麻煩人事部在下週五\n之前將訂立的年度績效評定標準發函至秘書室以及各單位，以利後續評估作業，謝謝。',
         data:''
       }
-    ]
+    ],
+    specific:['receive', 0]
+  },
+  mutations:{
+    chooseData(state, payload){
+      state.specific = [payload.category, payload.index];
+    }
   }
 })
