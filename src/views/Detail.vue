@@ -25,14 +25,27 @@
         </div>
       </aside>
       <div class="letter__body">
-          <p class="letter__object">{{getSpecificData.object}}</p>
-          <p class="letter__content">{{getSpecificData.content}}</p>
+        <p class="letter__object">{{getSpecificData.object}}</p>
+        <p class="letter__content">{{getSpecificData.content}}</p>
+        <div>
+          <!-- <div
+            :style="{backgroundImage: 'url('+ getPt() +')'}"
+            class="icon"
+          ></div>-->
+          <img
+            :src="getPt()"
+            :style="{width: '80%', height: 'auto', margin: 'auto', display: 'block'}"
+          />
+        </div>
       </div>
     </section>
   </article>
 </template>
 <script>
-import selfPt from '../assets/unnamed2.png';
+import selfPt from "../assets/unnamed2.png";
+import terrorPt from "../assets/terror.png";
+import screenshot from "../assets/ptcut.jpg";
+
 export default {
   name: "Detail",
   computed: {
@@ -41,10 +54,24 @@ export default {
       return this.$store.state[pointer[0]][pointer[1]];
     }
   },
-  data(){
-      return {
-          selfPt
+  data() {
+    return {
+      selfPt,
+      terrorPt,
+      screenshot
+    };
+  },
+  methods: {
+    getPt() {
+      console.log(this.getSpecificData);
+      if (this.getSpecificData.data == "screenshot") {
+        return screenshot;
+      } else if (this.getSpecificData.data == "terrorPt") {
+        return terrorPt;
+      } else {
+        return "";
       }
+    }
   }
 };
 </script>

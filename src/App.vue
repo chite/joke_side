@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <first-load :show="loadAnimation"></first-load>
     <nav class="bar">
       <hgroup class="bar__left">
         <font-awesome-icon icon="bars" />
@@ -19,7 +20,13 @@
       </div>
       <hgroup class="bar__right">
         <question-icon></question-icon>
-        <font-awesome-icon icon="th" />
+        <span
+          @click="clickTh"
+          class="bar__th"
+        >
+          <font-awesome-icon icon="th" />
+          <th-table :clicked="toggleTh"></th-table>
+        </span>
         <span class="bar__self">沐安</span>
       </hgroup>
     </nav>
@@ -114,10 +121,26 @@
       <section class="m-body">
         <div class="m-body__bar">
           <div class="m-body__l">
-            <div class="m-body__checkbox"></div>
-            <span>&#x25BE;</span>
-            <font-awesome-icon icon="redo-alt" />
-            <font-awesome-icon icon="ellipsis-v" />
+            <span
+              @click="toMainPage"
+              class="m-body__back"
+              v-if="showArrow()"
+            >
+              <font-awesome-icon icon="arrow-left" />
+            </span>
+            <div
+              class="m-body__checkbox"
+              v-if="!showArrow()"
+            ></div>
+            <span v-if="!showArrow()">&#x25BE;</span>
+            <font-awesome-icon
+              icon="redo-alt"
+              v-if="!showArrow()"
+            />
+            <font-awesome-icon
+              icon="ellipsis-v"
+              v-if="!showArrow()"
+            />
           </div>
           <div class="m-body__r">
             <span>&#9666;</span>
@@ -154,16 +177,26 @@ import CreateIcon from "./assets/createIcon.png";
 import UserPt from "./assets/unnamed.png";
 import DraftIcon from "./assets/draft.png";
 import BackUpIcon from "./assets/backup.png";
-// import StarIcon from "./assets/star.png";
-import QuestionIcon from "./components/QuestionIcon";
+import titleIcon from "./assets/favicon.png";
 import Download from "./assets/box.png";
 import Garbage from "./assets/garbagecan.png";
+import QuestionIcon from "./components/QuestionIcon";
+import ThTable from "./components/ThTable";
+import FirstLoad from './components/FirstLoad';
 export default {
   created() {
     document.title = "收件匣";
+    document.getElementsByTagName('link')[0].href = this.titleIcon;
+  },
+  mounted(){
+    setTimeout(()=>{
+      this.loadAnimation = false;
+    }, 5500);
   },
   components: {
-    QuestionIcon
+    QuestionIcon,
+    ThTable,
+    FirstLoad
   },
   data() {
     return {
@@ -174,16 +207,27 @@ export default {
       userPt: UserPt,
       draftIcon: DraftIcon,
       backupIcon: BackUpIcon,
-      // starIcon: StarIcon,
+      titleIcon,
       box: Download,
       garbageIcon: Garbage,
-      category: "receive"
+      category: "receive",
+      toggleTh: false,
+      loadAnimation: true
     };
   },
   methods: {
     clickCategory(category) {
-      this.$router.push('/').catch(()=>{})
+      this.$router.push("/").catch(() => {});
       this.category = category;
+    },
+    showArrow() {
+      return location.hash.includes("detail");
+    },
+    toMainPage() {
+      this.$router.push("/").catch(() => {});
+    },
+    clickTh() {
+      this.toggleTh = !this.toggleTh;
     }
   }
 };

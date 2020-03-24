@@ -1,15 +1,15 @@
 <template>
   <ul class="m-body__list">
     <li
+      :class="[`${item.clickable?'m-body__item--active':''} m-body__item`]"
       :key="index"
-      @click="handleClick(index)"
-      class="m-body__item"
+      @click="handleClick(index, item.clickable)"
       v-for="(item, index) in getList"
     >
       <div class="m-body__checkbox m-body__checkbox--light"></div>
       <font-awesome-icon :icon="['far', 'star']" />
-      <span class="m-body__name">{{item.object}}</span>
-      <span class="m-body__title">{{item.main}}</span>
+      <span :class="[`${item.clickable?'m-body__name--active':''} m-body__name`]">{{item.object}}</span>
+      <span :class="[`${item.clickable?'m-body__title--active':''}  m-body__title`]">{{item.main}}</span>
       <span class="m-body__content">-{{item.content}}</span>
       <div class="m-body__float">
         <div class="m-body__icontainer">
@@ -63,13 +63,14 @@ export default {
     };
   },
   methods: {
-    handleClick(index) {
+    handleClick(index, clickable) {
+      if (!clickable) return;
       console.log(this.category, index);
       this.$store.commit("chooseData", {
         category: this.category,
         index
       });
-      this.$router.push('/detail').catch(()=>{})
+      this.$router.push("/detail").catch(() => {});
     }
   }
 };
